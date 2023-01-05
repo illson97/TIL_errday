@@ -113,14 +113,29 @@ number == 1 뒤에 :가 찍혀있지 않아 오류 발생,
 
 
 
-n = 10
-total = 0
+#n = 10
+#total = 0
 
-for number in range(0, n + 1):
-    if number % 2 == 0:
-        total += number * 2
-    elif number % 2 == 1:
-        total += number + 1 * 3
+#for number in range(0, n + 1):
+    #if number % 2 == 0:
+        #total += number * 2
+    #elif number % 2 == 1:
+        #total += number + 1 * 3
 
-print(total)
+#print(total)
 
+
+
+
+dict_variable = {
+    "이름:": "정우영",
+    "생년월일:": "19000101",
+    "회사:": "하이퍼그로스",}
+
+for key, value in dict_variable.items():
+    print(key, value)
+
+"""
+예측을 작성하세요.
+?
+"""
