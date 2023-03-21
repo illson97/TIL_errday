@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Basics</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+  /*
+  1. 0 2 4 6 8 을 값으로 가진 배열 생성 및 출력 
+  */
+    let array01 = [0, 2, 4, 6, 8]
+    console.log(array01)
+  /*
+  2. 아래 반복문 코드와 동일한 결과의 반복문 코드를 map 메서드를 활용해서 작성
+  */
+    /*
+    let array02 = [0, 2, 4, 6, 8]
+    for (let i = 0; i < array.length; i++) {
+    let result = array02[i] * 2
+    console.log(result)
+    }
+    */
+    let map01 = []
+    array01.map(function(item, index) {
+        let result01 = item
+        map01.push(result01) 
+    });
+    console.log(map01)
+  /*
+  3. 아래 반복문 코드와 동일한 결과의 반복문 코드를 forEach 메서드를 활용해서 작성
+  let array = [0, 2, 4, 6, 8]
+   for (let i = 0; i < array.length; i++) {
+     let result = array[i] * 2
+     console.log(result)
+   }
+   */
+    let fe01 = []
+    array01.forEach((item, index, array) => {
+        let result02 = item
+        fe01.push(result02)
+    });
+    console.log(fe01);
+  /*
+  4. 아래 반복문 코드와 동일한 결과의 반복문 코드를 map 메서드를 활용해서 작성
+  let array = [0, 2, 4, 6, 8]
+  let newArray = []
+  for (let i = 0; i < array.length; i++) {
+    let result = array[i] * 3
+    newArray.push(result)
+  }
+  console.log(newArray)
+  */
+    let map02 = []
+    array01.map(function(item, index) {
+        let result03 = item *3
+        map02.push(result03) 
+    });
+    console.log(map02)
+  /*
+  5. 아래 반복문 코드와 동일한 결과의 반복문 코드를 forEach 메서드를 활용해서 작성
+  let array = [0, 2, 4, 6, 8]
+   let newArray = []
+   for (let i = 0; i < array.length; i++) {
+     let result = array[i] * 3
+     newArray.push(result)
+   }
+   console.log(newArray)
+  */
+  let fe02 = []
+    array01.forEach((item, index, array) => {
+        let result04 = item * 3
+        fe02.push(result04)
+    });
+    console.log(fe02);
+
+  /*
+  6. 아래 배열 변수가 주어졌을 때 홀수인 원소만 출력하는 반복문을 map 메서드를 활용해서 작성
+  // 아래 배열 활용
+  */
+    let array02 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let map03 = []
+    array02.map(function(item, index) {
+        if(item % 2 == 1) {
+            map03.push(item)
+        }
+    });
+    console.log(map03)
+
+  /*
+  7. 아래 배열 변수가 주어졌을 때 짝수인 원소만 출력하는 반복문을 forEach 메서드를 활용해서 작성
+  // 아래 배열 활용
+  */
+    let array03 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  
+    let fe03 = []
+    array03.forEach((item, index, array) => {
+        if(item % 2 == 0) {
+            fe03.push(item)
+        }
+    });
+    console.log(fe03)
+
+</script>
+
+</html>

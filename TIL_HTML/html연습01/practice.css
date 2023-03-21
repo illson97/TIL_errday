@@ -1,0 +1,93 @@
+
+        #make-red {
+            color:red;
+        }
+        #make-gray {
+            color: gainsboro
+        }
+        .make-blue {
+            color:cornflowerblue
+        }
+        .make-orange {
+            color: orange;
+        }
+        .font01 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .box01 {
+            text-align: left;
+            border-width: 5px;
+            width: 900px;
+            height: 1050px;
+            margin: 15px;
+            border-style: double;
+            border-radius: 10px 10px 10px 10px;
+            border-color: cornflowerblue;
+        }
+       
+        .my-underline01 {
+            text-decoration-line: underline;
+            text-decoration-style: dotted;
+            text-underline-position: under;
+        }
+        .my-underline02 {
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-underline-position: under;
+        }
+        img {
+            width: 880px;
+            height: 500px;
+            object-fit: cover;      
+        }
+        .spread-underline {
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            padding: 15px 0;
+            position: relative;
+        }
+        .spread-underline:after {    
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #ffb000;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+        .spread-underline:hover:after { 
+            width: 100%; 
+            left: 0px; 
+        }
+        .style-box {
+            background-color: ghostwhite;
+            border: 1px solid cornflowerblue;
+            width: 880px; height: 20px;
+            color: black;
+            border-radius: 10px 10px 10px 10px;
+            margin: 7px;
+        }
+        .my-line01 {
+            text-align: center;
+            position: relative;
+            top: 50;
+            transform: translateY(-50%);
+        }
+        .align-center {
+            text-align: center;
+        }
+        .my-line02 {
+            border-top: 1px solid #444444;
+            margin: 20px auto;
+            width: 500px;
+        }
+        .my-line02:after {
+            content: '\26EA';
+            position: relative;
+            top: -15px;
+            left: calc( 50% - 8px);
+        }

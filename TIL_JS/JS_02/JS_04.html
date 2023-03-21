@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="col">
+        <div class="row">
+            <div id="original" class="container w-25">
+                <div>
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">이메일</label>
+                    <input type="email" class="form-control" id="inputEmail">
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">비밀번호</label>
+                    <input type="password" class="form-control" id="inputPassword">
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" role="submit">로그인</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="copy" class="container">
+
+            </div>
+        </div>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  // div#original 과 동일한 DOM 생성 후 div#copy 의 자식 요소로 추가
+    let divcopy = document.getElementById("copy")
+    divcopy.classList.add('w-25') 
+    
+    //박스01DOM
+    let inner_box01 = document.createElement('div')
+    inner_box01.setAttribute('class', 'mb-3')
+    
+    //박스02DOM
+    let inner_box02 = document.createElement('div')
+    inner_box02.setAttribute('class', 'mb-3')
+
+    //박스03DOM
+    let inner_box03 = document.createElement('div')
+    inner_box03.setAttribute('class', 'mb-3')
+
+    
+    //라벨01DOM
+    let newLabel01 = document.createElement('label')
+    newLabel01.classList.add('form-label')
+    newLabel01.textContent = '이메일'
+    
+    let Input01 = document.createElement('input')
+    Input01.classList.add('form-control')
+
+    //라벨02DOM
+    let newLabel02 = document.createElement('label')
+    newLabel02.classList.add('form-label')
+    newLabel02.textContent = '비밀번호'
+    
+    let Input02 = document.createElement('input')
+    Input02.classList.add('form-control')
+
+
+    //버튼DOM
+    let buttonTag = document.querySelector('button')
+    let newBtn = document.createElement('button')
+    newBtn.classList.add('btn', 'btn-primary')
+    newBtn.textContent = '로그인'
+
+    inner_box01.append(newLabel01, Input01)
+    inner_box02.append(newLabel02, Input02)
+    inner_box03.append(newBtn)
+    divcopy.append(inner_box01, inner_box02, inner_box03)
+</script>
+
+</html>

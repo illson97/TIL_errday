@@ -1,0 +1,138 @@
+
+
+<!DOCTYPE html>
+<html lang = "en">
+<link rel = "HTML연습01" type = "text/css" href = "practice.css">
+<head>
+    <meta charset = "UTF-8">
+    <title>팀 버너스리</title>
+    <style>
+        .make-red {
+            color:red;
+        }
+        .make-gray {
+            color: gainsboro
+        }
+        .make-blue {
+            color:cornflowerblue
+        }
+        .make-orange {
+            color: orange;
+        }
+        .font01 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .box01 {
+            text-align: left;
+            border-width: 5px;
+            width: 900px;
+            height: 1050px;
+            margin: 15px;
+            border-style: double;
+            border-radius: 10px 10px 10px 10px;
+            border-color: cornflowerblue;
+            z-index: 1;
+        }
+       
+        .my-underline01 {
+            text-decoration-line: underline;
+            text-decoration-style: dotted;
+            text-underline-position: under;
+        }
+        .my-underline02 {
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-underline-position: under;
+        }
+        .img01 {
+            width: 900px;
+            height: 500px;
+            object-fit: cover;
+            position: relative;
+            border-radius: 10px 10px 10px 10px;
+            z-index:2;    
+        }
+        .spread-underline {
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            padding: 15px 0;
+            position: relative;
+        }
+        .spread-underline:after {    
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #00a2ff;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+        .spread-underline:hover:after { 
+            width: 100%; 
+            left: 0px; 
+        }
+        .style-box {
+            background-color: ghostwhite;
+            border: 1px solid cornflowerblue;
+            width: 880px; height: 20px;
+            color: black;
+            border-radius: 10px 10px 10px 10px;
+            margin: 7px;
+        }
+        .my-line01 {
+            text-align: center;
+            position: relative;
+            top: 50;
+            transform: translateY(-50%);
+        }
+        .align-center {
+            text-align: center;
+        }
+        .my-line02 {
+            border-top: 1px solid #444444;
+            margin: 20px auto;
+            width: 500px;
+        }
+        .my-line02:after {
+            content: '\26EA';
+            position: relative;
+            top: -15px;
+            left: calc( 50% - 8px);
+        }
+        .img-style01 {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            left: 750px;
+            top: 20px;
+            margin: 15px;
+            border-radius: 70%;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class = "box01">
+    <div class = "img01"><img src="practice.jpg" style = "margin: 10px" width="880px" alt="팀 버너스리">
+    <div class="img-style01"><img src="eng_pic.jpg" width="100px" height="80px" style = "border-radius: 70%;"></div> 
+    <h1 class = "make-blue font01"><center>팀 버너스리</center></h1>
+    <h4 class ="my-underline01"><em class = "make-gray"><center>프로그래머</center></em></h4>
+    <p class = "spread-underline style-box">1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고인하여 개발했다. 세계에서
+        <strong class = "make-red">웹의 아버지</strong>라 불리우며 많은 자식이 있다.</p>
+    <h2 class = "align-center"><strong>인물 정보</strong></h2>
+    <div class = "my-line02"></div>
+    <ul>
+        <li class = "spread-underline">국적: 영국 /</li>
+        <li class = "spread-underline">생년월일: 1955년 6월 8일 /</li>
+        <li class = "spread-underline">위키: <a class = "make-orange" href="https://ko.wikipedia.org/wiki/%ED%8C%80_%EB%B2%84%EB%84%88%EC%8A%A4%EB%A6%AC">팀 버너스리 위키피디아</a></li>
+        <li class = "spread-underline">낸시 칼슨과 이혼 후 로즈메리 리스와 재혼한 그는 능력자이다.</li>
+        <li class = "spread-underline">멀티캠퍼스 수강생 <strong class = "make-red">이정일</strong>에게 제 2의 아버지라고 불려 화제가 되고있다.</li>
+        <li class = "spread-underline">팀 버너스리경이 수강생 이정일의 행보에 주목하고 있다는 사실은 <strong class = "make-red">학계의 정설이다.</strong></li>
+    </ul>
+</body>
+</html>
+

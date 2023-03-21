@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">
+            <div id="original" class="container">
+                <div id="card" class="card w-25">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sir_Tim_Berners-Lee.jpg/540px-Sir_Tim_Berners-Lee.jpg"
+                    class="card-img-top">
+                <h4 class="card-header fw-bolder">
+                    팀 버너스리
+                </h4>
+                <div class="card-body">
+                    <p class="card-text">1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발. 웹의 아버지</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">국적 - 영국</li>
+                    <li class="list-group-item">생년월일 - 1955년 6월 8일</li>
+                    <li class="list-group-item">직업 - 전산과학자, 프로그래머, 교수</li>
+                    <li class="list-group-item">출신 대학 - 옥스퍼드 대학교 물리학 학사</li>
+                </ul>
+                <div class="card-footer text-end">
+                    <a href="https://ko.wikipedia.org/wiki/%ED%8C%80_%EB%B2%84%EB%84%88%EC%8A%A4%EB%A6%AC" class="card-link">
+                    추가 정보
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div id="copy" class="container">
+
+            </div>
+        </div>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  // div#original 과 동일한 DOM 생성 후 div#copy 의 자식 요소로 추가
+    let divcopy = document.getElementById("copy")
+
+    //카드DOM
+    let Card01 = document.createElement('div')
+    Card01.setAttribute('class', 'card')
+    Card01.classList.add('w-25')
+
+    //이미지DOM
+    let imgTag = document.querySelector('img')
+    let Img01 = document.createElement('img')
+    Img01.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sir_Tim_Berners-Lee.jpg/540px-Sir_Tim_Berners-Lee.jpg')
+
+    //카드 헤더DOM
+    let Header01 = document.createElement('h4')
+    Header01.setAttribute('class', 'card-header')
+    Header01.classList.add('fw-bolder')
+    Header01.innerHTML+= '팀 버너스리'
+
+    //카드 바디DOM
+    let Body01 = document.createElement('div')
+    Body01.setAttribute('class', 'card-body')
+
+    //카드 바디 텍스트DOM
+    let BodyText01 = document.createElement('p')
+    BodyText01.setAttribute('class', 'card-text')
+    BodyText01.innerHTML+= '1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발. 웹의 아버지'
+
+    //카드 리스트DOM
+    let List01 = document.createElement('ul')
+    List01.setAttribute('class', 'list-group')
+    List01.classList.add('list-group-flush')
+
+    //카드 리스트 내부요소DOM
+    let List_inner01 = document.createElement('li')
+    List_inner01.setAttribute('class', 'list-group-item')
+    List_inner01.innerHTML+= '국적 - 영국'
+
+    let List_inner02 = document.createElement('li')
+    List_inner02.setAttribute('class', 'list-group-item')
+    List_inner02.innerHTML+= '생년월일 - 1955년 6월 8일'
+
+    let List_inner03 = document.createElement('li')
+    List_inner03.setAttribute('class', 'list-group-item')
+    List_inner03.innerHTML+= '직업 - 전산과학자, 프로그래머, 교수'
+
+    let List_inner04 = document.createElement('li')
+    List_inner04.setAttribute('class', 'list-group-item')
+    List_inner04.innerHTML+= '출신 대학 - 옥스퍼드 대학교 물리학 학사'
+
+    //카드 푸터DOM
+    let Footer01 = document.createElement('div')
+    Footer01.setAttribute('class', 'card-footer')
+    Footer01.classList.add('text-end')
+
+    //카드 푸터 내부DOM
+    let aTag = document.querySelector('a')
+    let Footer_inner01 = document.createElement('a')
+    Footer_inner01.setAttribute('href', 'https://ko.wikipedia.org/wiki/%ED%8C%80_%EB%B2%84%EB%84%88%EC%8A%A4%EB%A6%AC')
+    Footer_inner01.setAttribute('class', 'card-link')
+    Footer_inner01.innerHTML+= '추가 정보'
+
+    //마지막 append DOM
+    Body01.append(BodyText01)
+    List01.append(List_inner01, List_inner02, List_inner03, List_inner04)
+    Footer01.append(Footer_inner01)
+    Card01.append(Img01, Header01, Body01, List01, Footer01)
+    divcopy.append(Card01)
+</script>
+
+</html>

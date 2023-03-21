@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    .flex01 {
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1;
+    }
+    .flex02 {
+        display: flex;
+        justify-content: flex-start;
+        flex-grow: 4;
+    }
+    .flex03 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container01 {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+        text-decoration-color: black;
+        border-radius: 5%;
+    }
+    .container02 {
+        display: flex;
+        flex-direction: row;
+        background-color: rgba(255, 238, 5, 0.247);
+        margin: 1%;
+    }
+    .container03 {
+        display: flex;
+        background-color: rgba(255, 238, 5, 0.247);
+        margin: 1%;
+        width: 100%;
+ 
+    }
+    .container04 {
+        display: flex;
+        background-color: blanchedalmond;
+        width: 90%;
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-bottom: 4%;
+        flex-direction: row;
+        border-radius: 3%;
+    }
+    .item01 {
+        align-items: center;
+        text-align: center;
+    }
+    .line01 {
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        color:lightcyan;
+        font-size: 5px;
+        margin: 1px;
+    }
+    .line01::before {
+        content: "";
+        flex-grow: 1;
+        margin: 1px;
+        background: rgb(7, 7, 7);
+        height: 1px;
+        font-size: 0px;
+        line-height: 0px;
+    }
+    .line01::after {
+        content: "";
+        flex-grow: 1;
+        margin: 1px;
+        background: rgb(7, 7, 7);
+        height: 1px;
+        font-size: 0px;
+        line-height: 0px;
+    }
+    .division-line {
+        border-top: 1px solid #444444;
+        margin: 30px 0px;
+        width: 100%;
+    }
+    .static01 {
+        float: left;
+    }
+    .img01 {
+        margin: 5%;
+
+    }
+</style>
+<body>
+    <div class = "container01">
+            <div class = "container03">
+            <h1 class="flex02" style="margin-left: 3%;"><strong>우리집 앞 길냥이</strong></h1>
+            <h1 class="flex01" style="margin-right: 3%;">그의 행보</h1>
+            </div>
+            <div class="division-line"></div>
+                <div class="container02" style="font-size: 1rem; flex-direction: column; justify-content: space-between;">
+                    <div class="container04">
+                        <img src="cat1.jpg" style="width:50%; height: 95%; margin: 2%;"  alt="cat1">
+                        <h4 style=" margin-top: 25%; margin-left: 4%; margin-right: 4%;">얼마전 잠시 바람쐬러 나갔는데 요녀석이 웅크려 자고 있다. 추운 겨울에 햇살이 따뜻했는지 인기척도 느끼지 못하고 곤히 잠든 모습이다. 밥은 어디서 잘 먹고 있는 것 같아.. 통통보다는 통뚱... 당분간 요녀석 지켜봐야지..</h4>
+                    </div>
+                    <div class="container04">
+                        <img src="cat2.jpg" style="width:50%; height: 90%; margin: 2%;"  alt="cat2">
+                        <h4 style="margin-top: 7%;  margin-left: 7%; margin-right: 7%;">그 녀석 한동안 보이지 않았다. 통통 아니 통뚱해도 추워보여서 따뜻한 곳을 찾아줄 까 했는데.. 그녀석이 차 위에 있다.. 이번에도 마찬가지.. 이웃님 차 보넷 위에서 일광욕을 즐기고 있네... 문득 차 내부에 고양이들이 들어가 잔다는 이야기가 떠올랐다. 걱정은 되지 않는다. 이 차 내부엔 이녀석이 들어갈 공간은 안나올것 같아..</h4>
+                    </div>
+                    <div class="container04" style="justify-content: space-around;">
+                        <img src="cat3.jpg" style="width: 30%; height: 90%; margin-left: 2%; margin-top: 1.5%;" alt="cat3">
+                    <div class="line01"></div>
+                        <img src="cat04.jpg" style="width: 30%; height: 90%; margin-top: 1.5%;" alt="cat04">
+                    <div class="line01"></div>
+                        <img src="cat5.jpg" style="width: 30%; height: 90%; margin-top: 1.5%; margin-right: 2%;" alt="cat5">
+                    </div>
+                </div>    
+            <div class="container03 flex03">
+                <h1 class="item01">!!!!!!!!!!!!!!!!!귀여워!!!!!!!!!!!!!!!</h1>
+            </div>
+                
+
+
+
+    </div>
+</body>
+
+</html>
