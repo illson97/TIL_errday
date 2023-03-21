@@ -1,5 +1,0 @@
-https://api.themoviedb.org/3/movie/76341?api_key=b4a16a5d6d1995b21a0971b7a1bbcf4d
-GET
-/movie/popular
-
-https://developers.themoviedb.org/3/movie/popular
