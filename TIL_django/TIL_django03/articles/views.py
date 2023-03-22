@@ -15,3 +15,19 @@ def dinner(request):
         'picked': picked,
     }
     return render(request, 'dinner.html', context)
+
+def search(request):
+    return render(request, 'search.html')
+
+def fakeNaver(request):
+    return render(request, 'fakeNaver.html')
+
+def throw(request):
+    return render(request, 'throw.html')
+
+def catch(request):
+    message = request.GET.get('message')
+    context = {
+        'message': message,
+    }
+    return render(request, 'catch.html', context)
