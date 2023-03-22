@@ -20,5 +20,5 @@ from articles import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('berners-lee/', views.berners_lee)
+    path('dinner/', views.dinner),
 ]

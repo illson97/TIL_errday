@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>DTL 실습</h1>
+    <h3>메뉴판</h3>
+    <p>{{food}}</p>
+    <ul>
+      % for food in foods %
+        <li>{{ food }}</li>
+      {% endfor %}
+    </ul>
+
+    {% if foods length == 0 %}
+      <p>메뉴가 남아있지 않습니다.</p>
+    {% else %}
+      <p>메뉴가 아직 남아있습니다.</p>
+    {% endif %}
+  </body>
+</html>
