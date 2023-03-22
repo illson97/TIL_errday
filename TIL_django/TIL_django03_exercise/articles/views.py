@@ -27,8 +27,14 @@ def lotto_create(request):
     return render(request, 'lotto_create.html')
 
 def lotto(request):
-    message = request.GET.get('number')
+    num = request.GET.get('count')
+    list01 = []
+
+    for i in range(1,int(num)+1):
+        list01.append(sorted(random.sample(list(range(1,46)),6)))
+
     context = {
-        'number': number,
+        'num' : num,
+        'list01' : list01,
     }
     return render(request, 'lotto.html', context)
