@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+    
+    {% block content %}
+    <a href = "{% url 'articles:throw' %}">던지기</a>
+    <a href = "{% url 'articles:number_print' %}">숫자 입출력</a>
+    <a href = "{% url 'articles:calculate' %}">숫자 계산</a>
+    {% endblock content %}
