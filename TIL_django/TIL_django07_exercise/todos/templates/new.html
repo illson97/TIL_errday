@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+    
+    {% block content %}
+    <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-center" style="background-color: lightgoldenrodyellow;">
+            <h1>일을 만들어서 한다라...</h1>
+        </div>
+    </nav>
+    </header>
+    <main>
+    <div class="container-fluid mt-5">
+        <form action="{% url 'todos:create' %}" method="GET">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color: lightgoldenrodyellow;">할 일 제목: </span>
+                        <input type="text" class="form-control" name="title" id="title" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color: lightgoldenrodyellow;">할 일 내용: </span>
+                        <textarea name="content" class="form-control" id="content"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></textarea>
+                    </div>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color: lightgoldenrodyellow;">할 일 우선순위: </span>
+                        <input type="number" name="number" class="form-control" id="number" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm" style="background-color: lightgoldenrodyellow;">할 일 마감기한: </span>
+                        <input type="date" name="date" class="form-control" id="date" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div class="container-fluid d-flex justify-content-center mt-5">
+                        <a href="{% url 'todos:index' %}" class="btn btn-outline-primary" role="button" button type="submit">돌아가기</a>
+                    </div>
+        </form>
+    </div>
+    </main>
+    <footer>
+    <div class="container-fluid mt-5 d-flex justify-content-center">
+        <a href="{% url 'todos:index' %}" class="btn btn-outline-primary" role="button">돌아가기</a>
+    </div>
+    </footer>
+    {% endblock content %}

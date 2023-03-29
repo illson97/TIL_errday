@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+    
+    {% block content %}
+    <div class="container-fluid mt-5 d-flex justify-content-center">
+        <h1>너 이거 하긴 할꺼지...? 일단 적을게...?</h1>
+    </div>
+    <div class="container-fluid mt-5 d-flex justify-content-center">
+        <a href="{% url 'todos:index' %}" class="btn btn-outline-primary" role="button">돌아가기</a>
+    </div>
+    {% endblock content %}

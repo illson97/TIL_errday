@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+    
+    {% block content %}
+    <div class="container-fluid d-flex justify-content-center mt-5" style="background-color: lightgoldenrodyellow;">
+    <h1>당신의 {{ todo.pk }}번째 계획</h1>
+    </div>
+    <div class="container-fluid d-flex justify-content-center item mt-3">
+        <div class="card mt-3 d-flex" style="width: 18rem;">
+            <div class="card-header" style="background-color: lightgoldenrodyellow;">
+            <P>할 일 제목: {{ todo.title }}</P>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                <p>할 일 내용: {{ todo.content }}</p>
+                </li>
+                <li class="list-group-item">
+                <p>할 일 중요도: {{ todo.priority}}</p>
+                </li>
+                <li class="list-group-item">
+                <p>할 일 마감기한: {{ todo.deadline }}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid mt-5 d-flex justify-content-center">
+        <a href="{% url 'todos:index' %}" class="btn btn-outline-primary" role="button">돌아가기</a>
+    </div>
+
+    {% endblock content %}

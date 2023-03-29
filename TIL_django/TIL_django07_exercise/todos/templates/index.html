@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+    
+    {% block content %}
+    <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-around" style="background-color: lightgoldenrodyellow;">
+            <h1 class="navbar-brand">너 계획 짜?</h1>
+            <a href="{% url 'todos:new' %}" class="btn btn-outline-primary" role="button">할 일 생성하기</a>
+        </div>
+    </nav>
+    </header>
+    <main>
+    {% for todo in todos %}
+    <div class="container-fluid d-flex justify-content-center item mt-3">
+        <div class="card mt-3 d-flex" style="width: 18rem;">
+            <div class="card-header" style="background-color: lightgoldenrodyellow;">
+            <p>할 일 목록 번호: {{ todo.pk }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="{% url 'todos:detail' todo.pk %}">
+                    <p>할 일 제목: {{ todo.title }}</p>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    할 일 내용: {{ todo.content }}
+                </li>
+                <li class="list-group-item">
+                    할 일 완료 여부 : {{ todo.completed }}
+                </li>
+                <li class="list-group-item">
+                    할 일 우선순위: {{ todo.priority }}
+                </li>
+                <li class="list-group-item">
+                    할 일 생성 날짜: {{ todo.created_at }}
+                </li>
+                <li class="list-group-item">
+                    할 일 마감 기한: {{ todo.deadline }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    </main>
+    {% endfor %}
+
+    {% endblock content %}
