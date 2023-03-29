@@ -1,0 +1,5 @@
+article = Article(content='금일 내용 복습', deadline='2023-03-28', priority='4')
+article = Article(content='점프 투 장고 책 학습', deadline='2023-03-28', priority='4')
+article = Article(content='방 청소', deadline='2023-03-28', priority='2')
+article = Article(content='docker 학습', deadline='2023-03-28', priority='3')
+article = Article(content='필요 기술 스택 조사', deadline='2023-03-28', priority='1')
