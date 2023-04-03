@@ -1,0 +1,35 @@
+{% extends 'accountbooks/base.html' %}
+
+{% block content %}
+<div class="container pt-5">
+<header>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-around">    
+    <h1 class="">Edit &#x26A1;</h1>
+    <a href="{% url 'accountbooks:index' %}" class="btn btn-outline-primary justify-align-center" role="button">메인 페이지</a>
+    </div>
+</nav>
+</header>
+<hr>
+<main>
+<form action="{% url 'accountbooks:update' accountbook.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+</main>
+</div>
+
+<script>
+    function validDate() {
+        const dateInput = document.getElementsByname('date')[0];
+        const submitButton = document.getElementsById('submit-button');
+        if (!Date.parse(dateInput.value)) {
+            submitButton.disabled = true;
+        }   else {
+            submitbutton.disabled = false;
+        }
+    }
+
+</script>
+{% endblock content %}
