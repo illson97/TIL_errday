@@ -11,12 +11,14 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
+
 def detail(request, pk):
     todo = Todo.objects.get(pk=pk)
     context = {
         'todo': todo,
     }
     return render(request, 'detail.html', context)
+
 
 def create(request):
     
