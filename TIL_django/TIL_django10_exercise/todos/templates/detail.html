@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card mt-3 d-flex justify-content-center" style="width: 18rem;">
+        <div class="card-header">
+            <h1>{{todo.pk}} - {{todo.title}} </h1>
+        </div>
+    <ul class="list-group list-group-flush">    
+        <li class="list-group-item">
+            <p>할 일 내용 - {{todo.content}}</p>
+        </li>
+        <li class="list-group-item">
+            <p>완료 여부 - {{todo.completed}} </p>
+        </li>
+        <li class="list-group-item">
+            <p>우선순위 - {{todo.priority}}</p>
+        </li>
+        <li class="list-group-item">    
+            <p>마감 기한 - {{todo.deadline}}</p>
+        </li>
+        <li class="list-group-item">
+            <p>생성 날짜 - {{todo.created_at}}</p>
+        </li>
+    </ul>
+    
+    <a href="{% url 'todos:update' todo.pk %}" class="btn btn-outline-primary justify-align-center" style="width: 18rem;" role="button">수정하기</a>
+    <a href="{% url 'todos:index'%}" class="btn btn-outline-primary justify-align-center" style="width: 18rem;" role="button">메인 페이지</a>
+    <form action="{% url 'todos:delete' todo.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="삭제하기" class="btn btn-outline-primary" role="button" style="width: 18rem;">
+    </form>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>수정하기</h2>
+
+<form action="{% url 'todos:update' todo.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-outline-primary" role="button">
+</form>
+{% endblock content %}
