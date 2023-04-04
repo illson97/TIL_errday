@@ -1,0 +1,10 @@
+% extends 'base.html' %}
+
+{% block content %}
+<h1>안녕하세요, {{ user }}</h1>
+<a href="{% url 'accounts:login' %}">Login</a>
+<form action="{% url 'account:logout' %}" method="POST">
+    % csrf_token %
+    <input type="submit" value="logout">
+</form>
+{% endblock content %}
