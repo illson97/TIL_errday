@@ -10,6 +10,8 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 
+
+
 def login(request):
   
     if request.method == 'POST':
@@ -25,6 +27,7 @@ def login(request):
     }
     return render(request, 'accounts/login.html', context)
 
+@login_required
 def logout(request):
     auth_logout(request)
     return redirect('articles:index')
@@ -44,11 +47,13 @@ def signup(request):
     }
     return render(request, 'accounts/signup.html', context)
 
+@login_required
 def delete(request):
     request.user.delete()
     auth_logout(request)
     return redirect('articles:index')
 
+@login_required
 def update(request):
     if request.method == 'POST':
         form = CustomUserChangeForm(request.POST, instance=request.user)
@@ -62,7 +67,7 @@ def update(request):
     }
     return render(request, 'accounts/update.html', context)
 
-
+@login_required
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
