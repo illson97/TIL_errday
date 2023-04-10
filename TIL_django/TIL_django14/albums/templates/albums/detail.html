@@ -1,0 +1,18 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+
+    {% if album.image %}
+        <img src="{{ album.image.url }}" alt="img">
+    {% endif %}
+
+    <h1>{{ album.title }}</h1>
+    <p>내용 - {{album.content}}</p>
+    <a href="{% url 'albums:update' album.pk %}" class="btn btn-primary" role="button">수정하기</a>
+    <form action="{% url 'albums:delete' album.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="삭제하기" class="btn btn-outline-danger" role="button">
+    </form>
+    <a href="{% url 'albums:index' %}" class="btn btn-outline-primary" role="button">돌아가기</a>
+
+{% endblock content %}

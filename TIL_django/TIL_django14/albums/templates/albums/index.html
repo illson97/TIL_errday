@@ -1,0 +1,9 @@
+{% extends 'articles/base.html' %}
+    
+{% block content %}
+<a href="{% url 'albums:create' %}" class="btn btn-outline-primary" role="button">가계부 생성</a>
+    {% load static %}
+
+    <img src="{% static 'albums/dog1.jpg' %}" alt="imgno">
+
+{% endblock content %}
