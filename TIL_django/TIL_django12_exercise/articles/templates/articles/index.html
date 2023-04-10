@@ -1,0 +1,24 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+    <h1>안녕하세요, {{ user }}</h1>
+    <form action="{% url 'accounts:logout' %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="logout">
+    </form>
+    <form action="{% url 'accounts:delete' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <input type="submit" value="회원탈퇴">
+    </form>
+    <a href="{% url 'accounts:update' %}">회원정보수정</a>
+    <a href="{% url 'accounts:change_password' %}">비밀번호수정</a>
+{% else %}
+    <a href="{% url 'accounts:login' %}">Login</a>
+    <a href="{% url 'accounts:signup' %}">Signup</a>
+{% endif %}
+
+
+{% endblock content %}
