@@ -1,0 +1,50 @@
+{% extends 'reviews/base.html' %}
+
+{% block content %}
+<header>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between">
+    <h1 class="navbar-brand ms-3">영화 리뷰 목록</h1>
+        <div class="button_box">
+            <a href="{% url 'reviews:create' %}" class="btn_style" data-bs-toggle="modal" data-bs-target="#createModal">영화 리뷰 업로드</a>
+        </div>
+        
+          
+          <!-- Modal -->
+          <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title">영화 리뷰 업로드</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                    <div class="modal-body">
+                        <form action="{% url 'reviews:create' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary" value="저장">
+                        </div>
+                    </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+    </div>
+</nav>
+</header>
+<main>
+<div class="container-fluid d-flex flex-column ms-5 mt-5">
+        {% for review in reviews %}
+            <div class="card d-flex align-center" style="width: 18rem; height: 18rem;">
+                <a href="{% url 'reviews:detail' review.pk %}">{{ review.title }}</a>
+                {% if review.image %}
+                    <img src="{{ review.image.url }}" alt="img" style="width: 17rem; height: 16rem; border-radius: 0.3rem;">
+                {% endif %}
+            </div>
+        {% endfor %}
+
+</div>
+</main>
+
+{% endblock content %}

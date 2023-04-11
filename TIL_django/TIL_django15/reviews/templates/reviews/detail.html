@@ -1,0 +1,57 @@
+{% extends 'reviews/base.html' %}
+
+{% block content %}
+
+<div class="container mt-5 d-flex justify-content-end">
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-dark text-center">
+            <h1>{{ review.title }}</h1>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <p>리뷰 번호:  {{review.pk}}</p>
+                </li>
+                <li class="list-group-item">
+                    <p>리뷰 영화 제목:  {{review.movie}}</p>
+                </li>
+                <li class="list-group-item">
+                    <p>리뷰 내용:  {{review.content}}</p>
+                </li>
+                <li class="list-group-item">
+                   <p>댓글 개수: {{ review.comment_set.all|length }} </p>
+                </li>
+                <li class="list-group-item">
+                    <form action="{% url 'reviews:comments_create' review.pk %}" method="POST">
+                        {% csrf_token %}
+                        {{ comment_form }}
+                        <input type="submit">
+                    </form>
+                </li>
+                {% for comment in comments %}
+                    <li class="list-group-item">
+                        <p>댓글 번호: {{ comment.pk }}</p>
+                        <p>댓글 내용: {{ comment.content }}</p>
+                        <form action="{% url 'reviews:comments_delete' review.pk comment.pk %}" method="POST">
+                            {% csrf_token %}
+                            <input type="submit" value="DELETE">
+                        </form>
+                    </li>
+                {% empty %}
+                    <p>No Comments</p>
+                {% endfor %}
+                <li class="list-group-item d-flex justify-content-between"> 
+                    <a href="{% url 'reviews:update' review.pk %}" class="btn btn-primary" role="button">수정하기</a>
+                    <form action="{% url 'reviews:delete' review.pk %}" method="POST">
+                        {% csrf_token %}
+                        <input type="submit" value="삭제하기" class="btn btn-outline-danger" role="button">
+                    </form>
+                </li>
+                <li class="list-group-item"> 
+                    <a href="{% url 'reviews:index' %}" class="btn btn-outline-primary" role="button">돌아가기</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}
