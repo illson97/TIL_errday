@@ -27,7 +27,6 @@ def detail(request, pk):
 
 
 def create(request):
-    
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
