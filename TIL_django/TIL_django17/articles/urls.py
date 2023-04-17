@@ -15,5 +15,5 @@ urlpatterns = [
     ),
     path('<int:article_pk>/likes/', views.likes, name='likes'),
     path('<int:article_pk>/emotes/<int:emotion>/', views.emotes, name='emotes'),
-    path('<int:article_pk>/comment_likes/', views.comment_likes, name='comment_likes'),
+    path('<int:article_pk>/comments/<int:comment_pk>/likes/', views.comment_likes, name='comment_likes'),
 ]
