@@ -8,4 +8,4 @@
 
 ## HTML
 
-## DB
+## DB, SQL
